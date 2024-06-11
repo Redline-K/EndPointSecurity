@@ -41,7 +41,7 @@ typedef struct _LUID_AND_ATTRIBUTES {
 } LUID_AND_ATTRIBUTES, *PLUID_AND_ATTRIBUTES;
 ```
 
-# 2. RtlAdjustPrivilege
+# 2. RtlAdjustPrivilege提权
 ``` c++
 NTSTATUS RtlAdjustPrivilege
 (
