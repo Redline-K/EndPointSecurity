@@ -51,6 +51,28 @@ NTSTATUS RtlAdjustPrivilege
     PBOOLEAN Enabled   // 输出原来相应权限的状态（打开 | 关闭）
 )
 
+pub unsafe extern "system" fn NtOpenThreadToken(
+    ThreadHandle: HANDLE, 
+    DesiredAccess: ACCESS_MASK, 
+    OpenAsSelf: BOOLEAN, 
+    TokenHandle: PHANDLE
+) -> NTSTATUS
+
+pub unsafe extern "system" fn ZwOpenProcessToken(
+    ProcessHandle: HANDLE, 
+    DesiredAccess: ACCESS_MASK, 
+    TokenHandle: PHANDLE
+) -> NTSTATUS
+
+pub unsafe extern "system" fn ZwAdjustPrivilegesToken(
+    TokenHandle: HANDLE, 
+    DisableAllPrivileges: BOOLEAN, 
+    NewState: PTOKEN_PRIVILEGES, 
+    BufferLength: ULONG, 
+    PreviousState: PTOKEN_PRIVILEGES, 
+    ReturnLength: PULONG
+) -> NTSTATUS
+
 int __stdcall RtlAdjustPrivilege(int Privilege, bool Enable, char CurrentThread, int *Enabled)
 {
   int result; // eax
