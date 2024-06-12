@@ -201,8 +201,15 @@ typedef struct _PROCESS_INFORMATION {
 } PROCESS_INFORMATION, *PPROCESS_INFORMATION, *LPPROCESS_INFORMATION;
 ```
 
-## 4.2. 其他逻辑
-与第3章节中类似
+# 5. APC注入
+``` c++
+DWORD QueueUserAPC(
+  PAPCFUNC  pfnAPC, //指向一个用户提供的APC函数的指针,当线程处于alertable状态时回调
+  HANDLE    hThread, //线程句柄，必须有THREAD_SET_CONTEXT 权限
+  ULONG_PTR dwData //传递给回调函数的参数值
+);
+```
 
-## 3. 参考
+
+## 6. 参考
 1、https://mp.weixin.qq.com/s/7lHqfWrewgiVtTXGhVXfQA
