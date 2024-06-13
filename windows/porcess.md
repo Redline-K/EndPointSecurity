@@ -113,14 +113,23 @@ BOOL Thread32Next(
 );
 ```
 
-## 3.2. 选定线程挂起
+## 3.2. 选定线程打开
+``` c++
+HANDLE OpenThread(
+  [in] DWORD dwDesiredAccess,
+  [in] BOOL  bInheritHandle,
+  [in] DWORD dwThreadId
+);
+```
+
+## 3.3. 选定线程挂起
 ``` c++
 DWORD SuspendThread(
   [in] HANDLE hThread
 );
 ```
 
-## 3.3. 获取选定线程上下文
+## 3.4. 获取选定线程上下文
 ``` c++
 BOOL GetThreadContext(
   [in]      HANDLE    hThread,
@@ -128,7 +137,7 @@ BOOL GetThreadContext(
 );
 ```
 
-## 3.4. 设置选定线程上下文
+## 3.5. 设置选定线程上下文
 ``` c++
 BOOL SetThreadContext(
   [in] HANDLE        hThread,
@@ -136,14 +145,14 @@ BOOL SetThreadContext(
 );
 ```
 
-## 3.5. 恢复选定线程运行
+## 3.6. 恢复选定线程运行
 ``` c++
 DWORD ResumeThread(
   [in] HANDLE hThread
 );
 ```
 
-## 3.6. 线程上下文需要修改内容
+## 3.7. 线程上下文需要修改内容
 ``` c++
 void __declspec(naked) InjectedFunction() {
     __asm {
