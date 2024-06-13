@@ -84,7 +84,7 @@ RtlCreateUserThread(
   OUT PCLIENT_ID          ClientID );
 ```
 
-# 3. 已有线程快照注入
+# 3. 已有线程劫持
 ## 3.1. 从进程快照中获取已存在线程列表
 ``` c++
 HANDLE CreateToolhelp32Snapshot(
