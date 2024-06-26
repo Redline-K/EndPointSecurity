@@ -219,6 +219,8 @@ DWORD QueueUserAPC(
 );
 ```
 
+# 6. mapping section
+https://cocomelonc.github.io/tutorial/2021/12/13/malware-injection-12.html
 
-## 6. 参考
+# 7. 参考
 1、https://mp.weixin.qq.com/s/7lHqfWrewgiVtTXGhVXfQA
